@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-    <node pkg="rviz" type="rviz" name="rviz" args="-d /home/sahar/catkin_ws/src/slam_test/rviz.rviz"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d /home/sahar/catkin_ws/src/SLAM-test/rviz.rviz"/>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen"/>
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
