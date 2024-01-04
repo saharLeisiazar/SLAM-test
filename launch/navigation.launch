@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d /home/sahar/catkin_ws/src/slam_test/rviz.rviz"/>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen"/>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
+        <param name="controller_frequency" value="10"/>
+
+        <rosparam file="$(find slam_test)/launch/include/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find slam_test)/launch/include/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find slam_test)/launch/include/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find slam_test)/launch/include/global_costmap_params.yaml" command="load" /> 
+        <rosparam file="$(find slam_test)/launch/include/base_local_planner_params.yaml" command="load" />
+
+    </node>
+
+
+</launch>
