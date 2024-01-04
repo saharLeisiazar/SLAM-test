@@ -6,10 +6,11 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> MoveBaseCl
 
 using namespace std;
 
-int main(int argc, char **argv){
+int main(int argc, char  **argv){
     ros::init(argc, argv, "goals");
     ros::NodeHandle n;
     ros::Rate loop_rate(10);
+
 
     // arbitrary goal points
     vector<vector<float>> points{ {3.0,0}  , {3,3} , {0,3}};
